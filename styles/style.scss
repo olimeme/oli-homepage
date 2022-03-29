@@ -1,0 +1,279 @@
+$primaryBlack: black;
+$primaryLight: white;
+$accentColor: #67A8B7;
+$backgroundColor: rgb(41, 41, 41);
+$cardColor: rgb(49, 49, 49);
+$borderColor: rgb(107, 107, 107);
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Montserrat',
+    sans-serif;
+    background-color: $backgroundColor;
+    color: $primaryLight;
+    letter-spacing: 1px;
+    h2 {
+        border-left: 6px solid $primaryLight;
+        padding-left: 5px;
+        margin-bottom: 20px;
+        font-size: 32px;
+    }
+}
+
+// #cursor {
+//     height: 10px;
+//     width: 10px;
+//     background-color: $accentColor;
+//     border-radius: 50%;
+//     position: absolute;
+//     transition-duration: 0.2s;
+//     transition-timing-function: ease-out;
+// }
+.hero {
+    height: 100vh;
+    padding: 0 8.5%;
+    position: relative;
+    &_logo {
+        width: 70px;
+        cursor: pointer;
+        &:hover {
+            color: $accentColor;
+        }
+    }
+    &_info {
+        margin-top: 15%;
+        font-size: 17px;
+        color: $primaryLight;
+        h1 {
+            font-size: 75px;
+            margin-bottom: 30px;
+        }
+        a {
+            margin-top: 30px;
+            font-weight: 700;
+            display: inline-block;
+            border-radius: 6px;
+            border: 2px solid $accentColor;
+            color: $accentColor;
+            padding: 10px 30px;
+            text-decoration: none;
+            transition: all 0.2s ease-in-out;
+        }
+        & &_cv {
+            background-color: $accentColor;
+            margin-left: 30px;
+            font-weight: 700;
+            color: $backgroundColor;
+            transition: all 0.2s ease-in-out;
+                &:hover {
+                background-color: $backgroundColor;
+                color: $accentColor;
+            }
+        }
+    }
+    &_socials {
+        margin-top: 30px;
+        a {
+            font-size: 30px;
+            color: $primaryLight;
+            transition: all 0.2s;
+            margin-right: 20px;
+            &:hover {
+                color: $accentColor;
+                transition: all 0.2s;
+            }
+        }
+    }
+}
+
+nav {
+    margin: 0 auto;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    ul {
+        flex: 1;
+        text-align: right;
+        padding-right: 40px;
+        li {
+            display: inline-block;
+            list-style: none;
+            margin: 10px 20px;
+            a {
+                text-decoration: none;
+                color: $primaryLight;
+                transition: all 0.2s;
+                position: relative;
+                &::after {
+                    content: '';
+                    width: 0;
+                    height: 1px;
+                    position: absolute;
+                    top: 23px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background-color: $primaryLight;
+                    transition: width 0.3s;
+                }
+                &:hover {
+                    color: $accentColor;
+                    transition: all 0.2s;
+                    &::after {
+                        background-color: $accentColor;
+                        width: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.bio {
+    height: 100vh;
+    &_wrapper {
+        width: 850px;
+        margin: 0 auto;
+    }
+    &_block {
+        padding: 20px 0;
+        h3 {
+            font-size: 24px;
+            padding-bottom: 8px;
+        }
+        a {
+            color: $accentColor;
+            text-decoration: none;
+            transition: 0.2s all ease-in-out;
+
+            &:hover {
+                color: $borderColor;
+            }
+        }
+        ul {
+            list-style: none;
+            li {
+                padding: 5px 0;
+                i {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+
+.timeline {
+    min-height: 100vh;
+    width: 100%;
+    padding-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &_container {
+        width: 80%;
+        height: auto;
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        ul {
+            list-style: none;
+            li {
+                padding: 20px;
+                background-color: $cardColor;
+                border-radius: 10px;
+                margin-bottom: 20px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    &_content {
+        h1 {
+            font-size: 25px;
+            font-weight: 900;
+            line-height: 30px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 25px;
+        }
+        .date {
+            font-size: 12px;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .timeline {
+        &_container {
+            ul {
+                li {
+                    width: 50%;
+                    margin-bottom: 50px;
+                    position: relative;
+                    &:nth-child(odd) {
+                        float: left;
+                        clear: right;
+                        transform: translateX(-30px);
+                        border-radius: 10px 0 10px 10px;
+                        &::after {
+                            transform: translate(50%, -50%);
+                            right: -30px;
+                        }
+                    }
+                    &:nth-child(even) {
+                        float: right;
+                        clear: left;
+                        transform: translateX(30px);
+                        border-radius: 0 10px 10px 10px;
+                        &::after {
+                            transform: translate(-50%, -50%);
+                            left: -30px;
+                        }
+                    }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        height: 20px;
+                        width: 20px;
+                        background-color: $primaryLight;
+                        border-radius: 50%;
+                        top: 0;
+                        transition: all 0.3s;
+                    }
+                    &:hover::after {
+                        background-color: $accentColor;
+                        transition: all 0.3s;
+                    }
+                }
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                height: 100%;
+                width: 2px;
+                background-color: $primaryLight;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        &_content {
+            .date {
+                position: absolute;
+                top: -30px;
+            }
+        }
+    }
+}
