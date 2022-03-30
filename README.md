@@ -1,5 +1,8 @@
 # My homepage 
 
+![image](https://user-images.githubusercontent.com/39192645/160795615-d72e60f9-4677-4c70-a006-141b23638e6d.png)
+
+
 ## Stack 
 
 - JavaScript 
