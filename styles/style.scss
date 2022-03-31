@@ -19,11 +19,27 @@ html {
     background-color: $backgroundColor;
     color: $primaryLight;
     letter-spacing: 1px;
+    scroll-behavior: smooth;
     h2 {
         border-left: 6px solid $primaryLight;
         padding-left: 5px;
         margin-bottom: 20px;
         font-size: 32px;
+    }
+}
+
+.logo {
+    color: $primaryLight;
+    text-decoration: none;
+    &_content {
+        border: 7px solid $primaryLight;
+        padding: 1px 10px;
+        font-size: 36px;
+        transition: 0.2s all ease-in-out;
+        &:hover {
+            color: $accentColor;
+            border-color: $accentColor;
+        }
     }
 }
 
@@ -138,9 +154,11 @@ nav {
 
 .bio {
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &_wrapper {
         width: 850px;
-        margin: 0 auto;
     }
     &_block {
         padding: 20px 0;
