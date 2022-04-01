@@ -5,6 +5,11 @@ $backgroundColor: rgb(41, 41, 41);
 $cardColor: rgb(49, 49, 49);
 $borderColor: rgb(107, 107, 107);
 
+$breakpointSM: 576px;
+$breakpointMD: 768px;
+$breakpointLG: 992px;
+$breakpointXL: 1200px;
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
 
 * {
@@ -150,6 +155,15 @@ nav {
             }
         }
     }
+    #click {
+        display: none;
+    }
+    label {
+        i {
+            font-size: 28px;
+            cursor: pointer;
+        }
+    }
 }
 
 .bio {
@@ -233,7 +247,33 @@ nav {
     }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and  (max-width: 940px) {
+    nav {
+        ul {
+            position: fixed;
+            top: 80px;
+            left: -100%;
+            background-color: $backgroundColor;
+            height: 100vh;
+            width: 100%;
+            display: block;
+            text-align: center;
+            transition: 0.4s all ease-in-out;
+           
+            li {
+                margin: 50px 0;
+                display: block;
+            }
+        }
+        
+    }
+
+    #click:checked ~ ul {
+        left: 0%;
+    }
+}
+
+@media only screen and (min-width: 768px) {    
     .timeline {
         &_container {
             ul {
