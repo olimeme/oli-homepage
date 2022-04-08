@@ -8,9 +8,9 @@
 
 html {
   font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
   background-color: #292929;
   color: white;
-  letter-spacing: 1px;
   scroll-behavior: smooth;
 }
 
@@ -175,6 +175,10 @@ nav #click {
   display: none;
 }
 
+nav label {
+  display: none;
+}
+
 nav label i {
   font-size: 28px;
   cursor: pointer;
@@ -285,7 +289,136 @@ nav label i {
   letter-spacing: 2px;
 }
 
+.contact {
+  height: 100vh;
+  background-color: #292929;
+}
+
+.contact_container {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact_form {
+  width: 500px;
+  height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact_form form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact_form form input, .contact_form form textarea {
+  width: 400px;
+  background-color: #292929;
+  border: none;
+  border-bottom: 1px solid #6b6b6b;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  -webkit-transition: 0.2s all ease-in-out;
+  transition: 0.2s all ease-in-out;
+}
+
+.contact_form form input:focus, .contact_form form textarea:focus {
+  outline: none;
+  border-bottom-color: white;
+  color: white;
+  font-size: 18px;
+}
+
+.contact_form form input:focus::-webkit-input-placeholder, .contact_form form textarea:focus::-webkit-input-placeholder {
+  color: white;
+}
+
+.contact_form form input:focus:-ms-input-placeholder, .contact_form form textarea:focus:-ms-input-placeholder {
+  color: white;
+}
+
+.contact_form form input:focus::-ms-input-placeholder, .contact_form form textarea:focus::-ms-input-placeholder {
+  color: white;
+}
+
+.contact_form form input:focus::placeholder, .contact_form form textarea:focus::placeholder {
+  color: white;
+}
+
+.contact_form form input {
+  height: 50px;
+}
+
+.contact_form form textarea {
+  height: 120px;
+  resize: none;
+}
+
+.contact_form form button {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+  margin-top: 15px;
+  font-weight: 700;
+  border-radius: 6px;
+  border: 2px solid #67A8B7;
+  color: #292929;
+  background-color: #67A8B7;
+  padding: 10px 30px;
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.contact_form form button:hover {
+  color: #67A8B7;
+  background-color: #292929;
+}
+
+.contact_header {
+  width: 500px;
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact_header h2 {
+  font-size: 72px;
+  padding-left: 20px;
+}
+
 @media only screen and (max-width: 940px) {
+  nav label {
+    display: block;
+  }
   nav ul {
     position: fixed;
     top: 80px;
