@@ -5,10 +5,10 @@ $backgroundColor: rgb(41, 41, 41);
 $cardColor: rgb(49, 49, 49);
 $borderColor: rgb(107, 107, 107);
 
-$breakpointSM: 576px;
-$breakpointMD: 768px;
-$breakpointLG: 992px;
-$breakpointXL: 1200px;
+// $breakpointSM: 576px;
+// $breakpointMD: 768px;
+// $breakpointLG: 992px;
+// $breakpointXL: 1200px;
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
 
@@ -58,8 +58,8 @@ html {
 //     transition-timing-function: ease-out;
 // }
 .hero {
-    height: 100vh;
     padding: 0 8.5%;
+    margin-bottom: 500px;
     position: relative;
     &_logo {
         width: 70px;
@@ -168,7 +168,6 @@ nav {
 }
 
 .bio {
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -203,9 +202,9 @@ nav {
 }
 
 .timeline {
-    min-height: 100vh;
     width: 100%;
-    padding-top: 100px;
+    margin-top: 100px;
+    margin-bottom: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -324,6 +323,53 @@ nav {
         h2 {
             font-size: 72px;
             padding-left: 20px;
+        }
+    }
+}
+
+.projects {
+    width: 850px;
+    margin: 0 auto;
+    &_wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+    &_header {
+        display: block;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    &_item {
+        width: 400px;
+        margin-bottom: 50px;
+        min-height: 300px;
+        // background-color: $cardColor;
+        // border-radius: 10px;
+        a {
+            text-decoration: none;
+            color: $primaryLight;
+        }
+        img {
+            width: 400px;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+        h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 14px;
+        }
+        &_descr {
+            flex-grow: 1;
+        }
+        &_stack{
+            margin-top: 20px;
+            font-weight: 800;
         }
     }
 }
