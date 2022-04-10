@@ -6,14 +6,18 @@ var typed = new Typed(".auto-input", {
 });
 
 var checkbox = document.querySelector("input[name=mode]");
+var link = document.querySelector("link[rel='icon']");
 
 checkbox.addEventListener("change", function () {
   if (!this.checked) {
     trans();
     document.documentElement.setAttribute("data-theme", "dark");
+    link.href = "favicon_light/favicon-32x32.png";
+    console.log(link);
   } else {
     trans();
     document.documentElement.setAttribute("data-theme", "light");
+    link.href = "favicon/favicon-32x32.png";
   }
 });
 
