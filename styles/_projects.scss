@@ -1,0 +1,86 @@
+html[data-theme="dark"] {
+    .projects {
+        &_item {
+            a {
+                color: $darktext;
+            }
+        }
+    }
+}
+
+html[data-theme="light"] {
+    .projects {
+        &_item {
+            a {
+                color: $lighttext;
+            }
+        }
+    }
+}
+
+.projects {
+    width: 850px;
+    margin: 0 auto;
+    &_wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+    &_header {
+        display: block;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    &_item {
+        width: 400px;
+        margin-bottom: 50px;
+        min-height: 300px;
+        // background-color: $cardColor;
+        // border-radius: 10px;
+        a {
+            text-decoration: none;
+        }
+        img {
+            width: 400px;
+            height: 230px;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+        h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 14px;
+        }
+        &_descr {
+            flex-grow: 1;
+        }
+        &_stack{
+            margin-top: 20px;
+            font-weight: 800;
+        }
+    }
+}
+
+@media only screen and  (max-width: 768px) {
+    .projects {
+        width: 80%;
+        margin: 0 auto;
+        &_wrapper {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }   
+        &_item {
+            width: 100%;
+            a img {
+                width: 100%;
+                height: 50%;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

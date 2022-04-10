@@ -1,0 +1,322 @@
+html[data-theme="dark"] {
+    .hero {
+        .logo {
+            color: $darktext;
+            &_content {
+                border: 7px solid $darktext;
+                &:hover {
+                    color: $darklink;
+                    border-color: $darklink;
+                }
+            }
+        }
+        &_info {
+            color: $darktext;
+            a {
+                border: 2px solid $darklink;
+            }
+            &_cv {
+                background-color: $darklink;
+                color: $darkbg;
+                &:hover {
+                    background-color: $darkbg;
+                    color: $darklink;
+                }
+            }
+        }
+        &_socials {
+            a {
+                color: $darktext;
+                &:hover {
+                    color: $darklink;
+                }
+            }
+        }
+        nav {
+            a {
+                color: $darktext;
+                &::after {
+                    background-color: $darktext;
+                }
+                &:hover {
+                    color: $darklink;
+                    transition: all 0.2s;
+                    &::after {
+                        background-color: $darklink;
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and  (max-width: 768px) {
+        .hero {
+            .logo {
+                &_content {
+                    border: 6px solid $darktext;
+                }
+            }
+            nav {
+                ul {
+                    background-color: $darkbg;
+                }
+            }
+        }
+    }
+
+}
+
+html[data-theme="light"] {
+    .hero {
+        .logo {
+            color: $lighttext;
+            &_content {
+                border: 7px solid $lighttext;
+                &:hover {
+                    color: $lightlink;
+                    border-color: $lightlink;
+                }
+            }
+        }
+        &_info {
+            color: $lighttext;
+            a {
+                border: 2px solid $lightlink;
+            }
+            &_cv {
+                background-color: $lightlink;
+                color: $lightbg;
+                &:hover {
+                    background-color: $lightbg;
+                    color: $lightlink;
+                }
+            }
+        }
+        &_socials {
+            a {
+                color: $lighttext;
+                &:hover {
+                    color: $lightlink;
+                }
+            }
+        }
+        nav {
+            a {
+                color: $lighttext;
+                &::after {
+                    background-color: $lighttext;
+                }
+                &:hover {
+                    color: $lightlink;
+                    transition: all 0.2s;
+                    &::after {
+                        background-color: $lightlink;
+                    }
+                }
+            }
+        }
+    }
+    @media only screen and  (max-width: 768px) {
+        .hero {
+            .logo {
+                &_content {
+                    border: 6px solid $lighttext;
+                }
+            }
+            nav {
+                ul {
+                    background-color: $lightbg;
+                }
+            }
+        }
+    }
+}
+
+.hero {
+    .logo {
+        text-decoration: none;
+        &_content {
+            padding: 1px 10px;
+            font-size: 36px;
+            transition: 0.2s all ease-in-out;
+        }
+    }
+    padding: 0 8.5%;
+    margin-bottom: 500px;
+    position: relative;
+    &_logo {
+        width: 70px;
+        cursor: pointer;
+    }
+    &_info {
+        margin-top: 15%;
+        font-size: 17px;
+        h1 {
+            font-size: 75px;
+            margin-bottom: 30px;
+        }
+        a {
+            margin-top: 30px;
+            font-weight: 700;
+            display: inline-block;
+            border-radius: 6px;
+
+            padding: 10px 30px;
+            text-decoration: none;
+            transition: all 0.2s ease-in-out;
+        }
+        & &_cv {
+            font-weight: 700;
+            transition: all 0.2s ease-in-out;
+        }
+    }
+    &_socials {
+        margin-top: 30px;
+        a {
+            font-size: 30px;
+            transition: all 0.2s ease-in-out;
+            margin-right: 20px;
+        }
+    }
+    nav {
+        margin: 0 auto;
+        padding: 30px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .label {
+            background-color: rgb(35, 56, 83);
+            display: flex;
+            height: 30px;
+            border-radius: 100px;
+            width: 60px;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            padding: 0 15px;
+            transition: all .5s ease-in-out;
+            cursor: pointer;
+        }
+        .label .fa-moon {
+            margin-left: -3px;
+            font-size: 16px;
+            color: rgb(255, 238, 1);
+        }
+        label .fa-sun {
+            margin-right: -3px;
+            font-size: 16px;
+            color: rgb(255, 175, 1);
+        }
+        .blob {
+            position: absolute;
+            left: 50%;
+            width: 23px;
+            height: 23px;
+            background: rgb(255, 255, 255);
+            border-radius: 50px;
+            transition: .5s ease all;
+        }
+        .checkbox {
+            opacity: 0;
+            position: absolute;
+        }
+        .checkbox:checked + .label .blob {
+            left: 5px;
+        }
+        .checkbox:checked + .label {
+            background-color: rgb(128, 223, 252);
+        }
+        ul {
+            flex: 1;
+            text-align: right;
+            padding-right: 40px;
+            li {
+                display: inline-block;
+                list-style: none;
+                margin: 10px 20px;
+                a {
+                    text-decoration: none;
+                    transition: all 0.2s;
+                    position: relative;
+                    &::after {
+                        content: '';
+                        width: 0;
+                        height: 1px;
+                        position: absolute;
+                        top: 23px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        transition: width 0.3s;
+                    }
+                    &:hover {
+                        transition: all 0.2s;
+                        &::after {
+                            width: 50%;
+                        }
+                    }
+                }
+            }
+        }
+        #click {
+            display: none;
+        }
+        label {
+            display: none;
+            i {
+                font-size: 28px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media only screen and  (max-width: 768px) {
+    .hero {
+        .logo {
+            margin-top: 20px;
+            &_content {
+                padding: 1px 8px;
+                font-size: 28px;
+                transition: 0.2s all ease-in-out;
+            }
+        }
+        &_info {
+            margin-top: 10vh;
+            h1 {
+                font-size: 34px;
+            }
+            p {
+                font-size: 16px;
+                br {
+                    display: none;
+                }
+            }
+            & &_cv {
+                margin-left: 0;
+            }
+        }  
+        nav {
+            label {
+                display: block;
+            }
+            ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                height: 100vh;
+                width: 100%;
+                display: block;
+                text-align: center;
+                transition: 0.4s all ease-in-out;
+                
+                li {
+                    margin: 50px 0;
+                    display: block;
+                }
+            }
+        }
+        #click:checked ~ ul {
+            left: 0%;
+        }
+    }
+}

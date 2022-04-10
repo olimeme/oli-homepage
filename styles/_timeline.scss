@@ -1,0 +1,170 @@
+html[data-theme="dark"] {
+    .timeline {
+        &_container {
+            ul {
+                li {
+                    background-color: $darkcard-bg;
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 768px) {    
+        .timeline {
+            &_container {
+                ul {
+                    li {
+                        &::after {
+                            background-color: $darktext;
+                        }
+                        &:hover::after {
+                            background-color: $darklink;
+                            transition: all 0.3s;
+                        }
+                    }
+                }
+                &::before {
+                    background-color: $darktext;
+                }
+            }
+        }
+    }
+}
+
+html[data-theme="light"] {
+    .timeline {
+        &_container {
+            ul {
+                li {
+                    background-color: $lightcard-bg;
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 768px) {    
+        .timeline {
+            &_container {
+                ul {
+                    li {
+                        &::after {
+                            background-color: $lighttext;
+                        }
+                        &:hover::after {
+                            background-color: $lightlink;
+                            transition: all 0.3s;
+                        }
+                    }
+                }
+                &::before {
+                    background-color: $lighttext;
+                }
+            }
+        }
+    }
+}
+
+.timeline {
+    width: 100%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &_container {
+        width: 80%;
+        height: auto;
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        ul {
+            list-style: none;
+            li {
+                padding: 20px;
+                border-radius: 10px;
+                margin-bottom: 20px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    &_content {
+        h1 {
+            font-size: 22px;
+            font-weight: 900;
+            line-height: 30px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 25px;
+        }
+        .date {
+            font-size: 12px;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {    
+    .timeline {
+        &_container {
+            ul {
+                li {
+                    width: 50%;
+                    margin-bottom: 50px;
+                    position: relative;
+                    &:nth-child(odd) {
+                        float: left;
+                        clear: right;
+                        transform: translateX(-30px);
+                        border-radius: 10px 0 10px 10px;
+                        &::after {
+                            transform: translate(50%, -50%);
+                            right: -30px;
+                        }
+                    }
+                    &:nth-child(even) {
+                        float: right;
+                        clear: left;
+                        transform: translateX(30px);
+                        border-radius: 0 10px 10px 10px;
+                        &::after {
+                            transform: translate(-50%, -50%);
+                            left: -30px;
+                        }
+                    }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        height: 20px;
+                        width: 20px;
+                        border-radius: 50%;
+                        top: 0;
+                        transition: all 0.3s;
+                    }
+                    &:hover::after {
+                        transition: all 0.3s;
+                    }
+                }
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                height: 100%;
+                width: 2px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        &_content {
+            .date {
+                position: absolute;
+                top: -30px;
+            }
+        }
+    }
+}

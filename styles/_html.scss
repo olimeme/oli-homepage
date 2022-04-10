@@ -1,0 +1,28 @@
+html[data-theme="dark"] {
+    background-color: $darkbg;
+    color: $darktext;
+    h2 {
+        border-left: 6px solid $darktext;
+    }
+}
+
+html[data-theme="light"] {
+    background-color: $lightbg;
+    color: $lighttext;
+    h2 {
+        border-left: 6px solid $lighttext;
+    }
+}
+
+
+html {
+    font-family: $montserrat;
+    letter-spacing: 1px;
+    scroll-behavior: smooth;
+    transition: 0.2s all ease-in-out;
+    h2 {
+        padding-left: 5px;
+        margin-bottom: 20px;
+        font-size: 32px;
+    }
+}

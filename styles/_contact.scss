@@ -1,0 +1,79 @@
+.contact {
+    height: 100vh;
+    background-color: $backgroundColor;
+    &_container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &_form {
+        width: 500px;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            input, textarea{
+                width: 400px;
+                background-color: $backgroundColor;
+                border: none;
+                border-bottom: 1px solid $borderColor;
+                color: $primaryLight;
+                font-family: 'Montserrat',
+                sans-serif;
+                letter-spacing: 1px;
+                margin-bottom: 20px;
+                transition: 0.2s all ease-in-out;
+                &:focus {
+                    outline: none;
+                    border-bottom-color: $primaryLight;
+                    color: $primaryLight;
+                    font-size: 18px;
+                    &::placeholder {
+                        color: $primaryLight;
+                    }
+                }
+            }
+            input {
+                height: 50px;
+            }
+            textarea {
+                height: 120px;
+                resize: none;
+            }
+            button {
+                font-family: 'Montserrat',
+                sans-serif;
+                letter-spacing: 1px;
+                margin-top: 15px;
+                font-weight: 700;
+                border-radius: 6px;
+                border: 2px solid $accentColor;
+                color: $backgroundColor;
+                background-color: $accentColor;
+                padding: 10px 30px;
+                text-decoration: none;
+                transition: all 0.2s ease-in-out;
+                &:hover {
+                    color: $accentColor;
+                    background-color: $backgroundColor;
+                }
+            }
+           
+        }        
+    }
+    &_header {
+        width: 500px;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        h2 {
+            font-size: 72px;
+            padding-left: 20px;
+        }
+    }
+}
