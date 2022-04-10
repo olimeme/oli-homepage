@@ -495,14 +495,21 @@ nav {
         font-size: 16px;
     }
     .projects {
-        margin: 0;
-        width: 0;
-        padding: 0 8.5%;
+        width: 80%;
+        margin: 0 auto;
+        &_header {
+            
+        }
+        &_wrapper {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }   
         &_item {
+            width: 100%;
             a img {
-                display: inline;
-                width: 300px;
-                height: 150px;
+                width: 100%;
+                height: 50%;
                 margin-bottom: 20px;
             }
         }
