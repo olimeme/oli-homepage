@@ -204,7 +204,7 @@ nav {
 .timeline {
     width: 100%;
     margin-top: 100px;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -230,7 +230,7 @@ nav {
 
     &_content {
         h1 {
-            font-size: 25px;
+            font-size: 22px;
             font-weight: 900;
             line-height: 30px;
             margin-bottom: 10px;
@@ -243,6 +243,69 @@ nav {
             font-size: 12px;
             margin-bottom: 10px;
             letter-spacing: 2px;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {    
+    .timeline {
+        &_container {
+            ul {
+                li {
+                    width: 50%;
+                    margin-bottom: 50px;
+                    position: relative;
+                    &:nth-child(odd) {
+                        float: left;
+                        clear: right;
+                        transform: translateX(-30px);
+                        border-radius: 10px 0 10px 10px;
+                        &::after {
+                            transform: translate(50%, -50%);
+                            right: -30px;
+                        }
+                    }
+                    &:nth-child(even) {
+                        float: right;
+                        clear: left;
+                        transform: translateX(30px);
+                        border-radius: 0 10px 10px 10px;
+                        &::after {
+                            transform: translate(-50%, -50%);
+                            left: -30px;
+                        }
+                    }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        height: 20px;
+                        width: 20px;
+                        background-color: $primaryLight;
+                        border-radius: 50%;
+                        top: 0;
+                        transition: all 0.3s;
+                    }
+                    &:hover::after {
+                        background-color: $accentColor;
+                        transition: all 0.3s;
+                    }
+                }
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                height: 100%;
+                width: 2px;
+                background-color: $primaryLight;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        &_content {
+            .date {
+                position: absolute;
+                top: -30px;
+            }
         }
     }
 }
@@ -375,7 +438,33 @@ nav {
     }
 }
 
-@media only screen and  (max-width: 940px) {
+@media only screen and  (max-width: 768px) {
+    .hero {
+        .logo {
+            margin-top: 20px;
+            &_content {
+                border: 6px solid $primaryLight;
+                padding: 1px 8px;
+                font-size: 28px;
+                transition: 0.2s all ease-in-out;
+            }
+        }
+        &_info {
+            margin-top: 10vh;
+            h1 {
+                font-size: 34px;
+            }
+            p {
+                font-size: 16px;
+                br {
+                    display: none;
+                }
+            }
+            & &_cv {
+                margin-left: 0;
+            }
+        }  
+    }
     nav {
         label {
             display: block;
@@ -398,71 +487,25 @@ nav {
         }
         
     }
-
     #click:checked ~ ul {
         left: 0%;
     }
-}
-
-@media only screen and (min-width: 768px) {    
-    .timeline {
-        &_container {
-            ul {
-                li {
-                    width: 50%;
-                    margin-bottom: 50px;
-                    position: relative;
-                    &:nth-child(odd) {
-                        float: left;
-                        clear: right;
-                        transform: translateX(-30px);
-                        border-radius: 10px 0 10px 10px;
-                        &::after {
-                            transform: translate(50%, -50%);
-                            right: -30px;
-                        }
-                    }
-                    &:nth-child(even) {
-                        float: right;
-                        clear: left;
-                        transform: translateX(30px);
-                        border-radius: 0 10px 10px 10px;
-                        &::after {
-                            transform: translate(-50%, -50%);
-                            left: -30px;
-                        }
-                    }
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        height: 20px;
-                        width: 20px;
-                        background-color: $primaryLight;
-                        border-radius: 50%;
-                        top: 0;
-                        transition: all 0.3s;
-                    }
-                    &:hover::after {
-                        background-color: $accentColor;
-                        transition: all 0.3s;
-                    }
-                }
-            }
-            &::before {
-                content: '';
-                position: absolute;
-                height: 100%;
-                width: 2px;
-                background-color: $primaryLight;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-        }
-        &_content {
-            .date {
-                position: absolute;
-                top: -30px;
+    .bio {
+        padding: 0 8.5%;
+        font-size: 16px;
+    }
+    .projects {
+        margin: 0;
+        width: 0;
+        padding: 0 8.5%;
+        &_item {
+            a img {
+                display: inline;
+                width: 300px;
+                height: 150px;
+                margin-bottom: 20px;
             }
         }
     }
 }
+
