@@ -5,8 +5,10 @@ var typed = new Typed(".auto-input", {
   loop: true,
 });
 
-var checkbox = document.querySelector("input[name=mode]");
-var link = document.querySelector("link[rel='icon']");
+const checkbox = document.querySelector("input[name=mode]");
+const link = document.querySelector("link[rel='icon']");
+const navItem = document.querySelectorAll("#nav_item");
+const navBtn = document.querySelector("#click");
 
 checkbox.addEventListener("change", function () {
   if (!this.checked) {
@@ -19,6 +21,12 @@ checkbox.addEventListener("change", function () {
     document.documentElement.setAttribute("data-theme", "light");
     link.href = "favicon/favicon-32x32.png";
   }
+});
+
+navItem.forEach((item) => {
+  item.addEventListener("click", function () {
+    navBtn.checked = !navBtn.checked;
+  });
 });
 
 let trans = () => {

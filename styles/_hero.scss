@@ -57,8 +57,11 @@ html[data-theme="dark"] {
                 }
             }
             nav {
+                li {
+                    border-bottom: 2px solid $darktext;
+                }
                 ul {
-                    background-color: $darkbg;
+                    background-color: $darkcard-bg;
                 }
             }
         }
@@ -101,6 +104,7 @@ html[data-theme="light"] {
             }
         }
         nav {
+            
             a {
                 color: $lighttext;
                 &::after {
@@ -124,8 +128,11 @@ html[data-theme="light"] {
                 }
             }
             nav {
+                li {
+                    border-bottom: 2px solid $lighttext;
+                }
                 ul {
-                    background-color: $lightbg;
+                    background-color: $lightcard-bg;
                 }
             }
         }
@@ -238,22 +245,7 @@ html[data-theme="light"] {
                     text-decoration: none;
                     transition: all 0.2s;
                     position: relative;
-                    &::after {
-                        content: '';
-                        width: 0;
-                        height: 1px;
-                        position: absolute;
-                        top: 23px;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        transition: width 0.3s;
-                    }
-                    &:hover {
-                        transition: all 0.2s;
-                        &::after {
-                            width: 50%;
-                        }
-                    }
+                   
                 }
             }
         }
@@ -301,22 +293,47 @@ html[data-theme="light"] {
             }
             ul {
                 position: fixed;
-                top: 80px;
-                left: -100%;
-                height: 100vh;
-                width: 100%;
-                display: block;
+                padding: 0;
+                margin: 0 auto;
+                left: 0;
+                right: 0;
+                top: 100px;
+                border-radius: 10px;
+                height: 140px;
+                width: 200px;
                 text-align: center;
-                transition: 0.4s all ease-in-out;
-                
+                transition: 0.2s all ease-in-out;
+                z-index: -10;
+                opacity: 0;
                 li {
-                    margin: 50px 0;
                     display: block;
+                    padding: 7px;
+                    &:last-child {
+                        border: none;
+                    }
+                    a {
+                        &::after {
+                            content: '';
+                            width: 0;
+                            height: 0;
+                            position: absolute;
+                            top: 23px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            transition: width 0.3s;
+                        }
+                        &:hover {
+                            transition: all 0.2s;
+                        }
+                    }
                 }
             }
         }
         #click:checked ~ ul {
-            left: 0%;
+            top: 100px;
+            display: block;
+            opacity: 1;
+            z-index: 10;
         }
     }
 }
