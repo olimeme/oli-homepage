@@ -37,7 +37,7 @@ function closePopupNavbar(e) {
   }
 }
 
-["click", "scroll"].forEach((e) =>
+["click", "scroll", "touchstart"].forEach((e) =>
   window.addEventListener(e, (e) => {
     closePopupNavbar(e);
   })
