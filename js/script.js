@@ -15,7 +15,6 @@ checkbox.addEventListener("change", function () {
     trans();
     document.documentElement.setAttribute("data-theme", "dark");
     link.href = "favicon_light/favicon-32x32.png";
-    console.log(link);
   } else {
     trans();
     document.documentElement.setAttribute("data-theme", "light");
@@ -28,6 +27,21 @@ navItem.forEach((item) => {
     navBtn.checked = !navBtn.checked;
   });
 });
+
+function closePopupNavbar(e) {
+  const targetIsNotNavBtn = e.target !== navBtn;
+  const navBtnChecked = navBtn.checked;
+  if (targetIsNotNavBtn && navBtnChecked) {
+    e.preventDefault();
+    navBtn.checked = !navBtn.checked;
+  }
+}
+
+["click", "scroll"].forEach((e) =>
+  window.addEventListener(e, (e) => {
+    closePopupNavbar(e);
+  })
+);
 
 let trans = () => {
   document.documentElement.classList.add("transition");
