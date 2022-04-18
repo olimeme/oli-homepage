@@ -23,8 +23,10 @@ checkbox.addEventListener("change", function () {
 });
 
 navItem.forEach((item) => {
-  item.addEventListener("click", function () {
+  item.addEventListener("click", function (e) {
     navBtn.checked = !navBtn.checked;
+    const navAnchorTagHref = e.target.getAttribute('href');
+    document.querySelector(navAnchorTagHref).scrollIntoView({behavior: 'smooth'});
   });
 });
 
@@ -49,3 +51,5 @@ let trans = () => {
     document.documentElement.classList.remove("transition");
   }, 1000);
 };
+
+console.log(navBtn.checked);
