@@ -882,6 +882,19 @@ html[data-theme="light"] ::-webkit-scrollbar-thumb {
   transition: 0.2s all ease-in-out;
 }
 
+html[data-theme="dark"] .license_container {
+  color: #6b6b6b;
+}
+
+html[data-theme="light"] .license_container {
+  color: #6b6b6b;
+}
+
+.license_container {
+  text-align: center;
+  padding: 20px 0;
+}
+
 * {
   margin: 0;
   padding: 0;

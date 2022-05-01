@@ -1,0 +1,22 @@
+html[data-theme="dark"] {
+   .license {
+       &_container {
+           color: $darkborder;
+       }
+   }
+}
+
+html[data-theme="light"] {
+    .license {
+        &_container {
+            color: $lightborder;
+        }
+    }
+}
+
+.license {
+    &_container {
+        text-align: center;
+        padding: 20px 0;
+    }
+}
